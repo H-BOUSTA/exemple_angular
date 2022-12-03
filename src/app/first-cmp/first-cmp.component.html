@@ -1,0 +1,25 @@
+<p>first-cmp works!</p>
+<button (click)="onButtonClick()">{{buttonTitle}}</button>
+<img [src]="imageUrl" style="background-color: black;">
+<table>
+    <tr *ngFor="let item of listAlpha">{{ item }}</tr>
+</table>
+
+
+<div [ngSwitch]="resultat">
+    <p *ngSwitchCase="true" style="color: green;">REUSSITE</p>
+    <p *ngSwitchCase="false" style="color: red;">ECHEC</p>
+</div>
+
+<p [ngClass]="{success : resultat == true, error : resultat == false}">{{ resultat ? 'reussite' : 'echec' }}</p>
+<p> {{ today | date}} </p>
+<p> {{ today | date: 'shortTime' }} </p>
+<p> {{ today | date: 'fullDate' }} </p>
+
+<p> {{ buttonTitle | uppercase}} </p>
+<p> {{ buttonTitle | lowercase }} </p>
+<p> {{ montant | currency}} </p>
+
+<!-- nombre min de digits -->
+<p> {{ montant | number : '5.2-5'}} </p>
+
