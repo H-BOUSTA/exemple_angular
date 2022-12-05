@@ -12,7 +12,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { LOCATION_INITIALIZED, registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr'
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader'
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component'
+import { FormsModule } from '@angular/forms';
+
+
 registerLocaleData(localeFr,'fr')
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -23,7 +27,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     FirstCmpComponent,
-    SecondCmpComponent
+    SecondCmpComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ export function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
         }
       }
-    )
+    ),
+    FormsModule
   ],
   providers: [
     {
